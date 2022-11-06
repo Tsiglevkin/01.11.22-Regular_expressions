@@ -46,7 +46,7 @@ def merge_doubles(some_list):
     for origin_row in tqdm(work_list, desc='Проверяем дубли', unit=' запись'):
         # sleep(0.1)
         for check_row in work_list:
-            while len(check_row) > 7:
+            while len(check_row) > 7:  # одна запись о человеке имеет длину 8, из-за чего выпадает ошибка.
                 del check_row[-1]
             if origin_row != check_row and origin_row[0] == check_row[0] and origin_row[1] == check_row[1]:
                 for i in range(len(origin_row)):
